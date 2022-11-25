@@ -116,7 +116,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 h1 {
   color: #492386;
   font-size: 80px;
