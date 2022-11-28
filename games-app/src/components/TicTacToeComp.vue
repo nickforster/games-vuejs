@@ -4,6 +4,7 @@
             :class="{ hasValue: fields[index] }" class="button">{{ field }}
     </button>
   </div>
+  <button id="back-button"><a href="#">back</a></button>
   <button id="reset-button" @click="resetGame">reset</button>
   <span :class="{active: winner}" id="span"></span>
 </template>
@@ -89,6 +90,8 @@ export default {
       }
       player = 'x'
       this.winner = ''
+      const span = document.getElementById('span')
+      span.style.height = '0px'
     }
   }
 }
@@ -138,7 +141,7 @@ button.hasValue:hover {
   background-color: #090a1a !important;
 }
 
-#reset-button {
+#reset-button, #back-button {
   position: absolute;
   width: fit-content;
   height: fit-content;
@@ -158,10 +161,26 @@ button.hasValue:hover {
   }
 }
 
+#back-button {
+  top: 1rem;
+  left: 1rem;
+  transform: none;
+}
+
+a {
+  color: #492386;
+  background: none;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:visited {
+  color: #492386;
+}
+
 span {
   position: absolute;
   display: block;
-  background-color: #572a9f;
+  background-color: #492386;
   border-radius: 2px;
   width: 8px;
   margin: 0;
