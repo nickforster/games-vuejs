@@ -129,6 +129,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
+  padding: 1.5rem;
 }
 button {
   width: 100%;

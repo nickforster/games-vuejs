@@ -1,12 +1,11 @@
 <template>
-  <HomeComp />
-  <component :is="currentView" />
+  <component :is="currentView"/>
 </template>
 
 <script>
+import HomeComp from "@/components/HomeComp";
 import RacingComp from "@/components/RacingComp";
 import Game2048Comp from "@/components/Game2048Comp";
-import HomeComp from "@/components/HomeComp";
 import TicTacToeComp from "@/components/TicTacToeComp"
 
 const routes = {
@@ -39,7 +38,7 @@ export default {
 <style>
 body {
   background-color: #090a1a;
-  margin: 0 1.5rem 3rem;
+  margin: 0;
   scroll-behavior: smooth;
 }
 </style>

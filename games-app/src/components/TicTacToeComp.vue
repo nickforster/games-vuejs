@@ -54,7 +54,8 @@ export default {
         this.winner = returnValue.winner
         if (this.winner !== '') {
           const rect = document.getElementsByClassName('button')[returnValue.position].getBoundingClientRect()
-          let span = document.getElementById('span')
+          const span = document.getElementById('span')
+          // rotate, position and set length of the span
           if (returnValue.type === 'horizontal') {
             span.style.rotate = '90deg'
             span.style.top = rect.top + (rect.height - this.spanHeight) / 2 + 'px'
