@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/background.jpg" alt="background-image">
+  <img src="../assets/background.jpg" alt="background-image" id="image">
   <div>
     <p id="p">{{ randomFact }}</p>
   </div>
@@ -22,18 +22,6 @@ function typeWriter(text, n) {
     }, 50);
   }
 }
-
-window.addEventListener('mousemove', (e) => {
-  const spotlight = document.querySelector('.spotlight');
-  console.log(spotlight)
-  console.log(`radial-gradient(circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%, 160px}`)
-  spotlight.style.background =
-      `radial-gradient(
-      circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%,
-      transparent,
-      rgb(09, 10, 26) 200px)`;
-
-})
 
 export default {
   data() {
@@ -75,12 +63,17 @@ export default {
 
       this.getRandomFact()
     })
-  },
-  head: {
-    link: [
-      {rel: 'preload', id: 'current-font', as: 'font'},
-      {rel: 'preload', id: 'loaded-font', as: 'font'}
-    ]
+
+    window.addEventListener('mousemove', (e) => {
+      const spotlight = document.querySelector('.spotlight');
+      if (spotlight !== null) {
+        spotlight.style.background =
+            `radial-gradient(
+            circle at ${e.pageX / window.innerWidth * 100}% ${e.pageY / window.innerHeight * 100}%,
+            transparent,
+            rgb(09, 10, 26) 200px)`;
+      }
+    })
   }
 }
 </script>
