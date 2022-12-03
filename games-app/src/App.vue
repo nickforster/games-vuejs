@@ -7,12 +7,14 @@ import HomeComp from "@/components/HomeComp";
 import TicTacToeComp from "@/components/TicTacToeComp"
 import FlagGuessingComp from "@/components/FlagGuessingComp";
 import Game2048Comp from "@/components/Game2048Comp";
+import RandomFactsComp from "@/components/RandomFactsComp";
 
 const routes = {
   '/': HomeComp,
   '/tictactoe': TicTacToeComp,
   '/flagsguessing': FlagGuessingComp,
-  '/2048': Game2048Comp
+  '/2048': Game2048Comp,
+  '/randomfacts': RandomFactsComp
 }
 
 export default {
