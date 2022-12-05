@@ -1,6 +1,6 @@
 <template>
   <img src="../assets/background.jpg" alt="background-image" id="image">
-  <div>
+  <div id="p-container">
     <p id="p">{{ randomFact }}</p>
   </div>
   <button id="back-button"><a href="#">back</a></button>
@@ -88,7 +88,7 @@ img {
   object-fit: cover;
 }
 
-div:has(p) {
+#p-container {
   display: flex;
   justify-content: center;
   align-items: center;
