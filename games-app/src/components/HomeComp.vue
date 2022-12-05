@@ -13,6 +13,7 @@ export default {
   components: {GameComp},
   data() {
     return {
+      // all the games and their attributes to be generated
       games: [
         {
           name: "2048",
