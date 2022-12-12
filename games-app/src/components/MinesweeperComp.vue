@@ -143,7 +143,6 @@ export default {
           this.fields[id] = this.solutionFields[id]
         }
       }
-      // TODO color field correctly
     },
     buttonRightClick(id) {
       this.fields[id] === '🏴' ? this.fields[id] = '' : this.fields[id] = '🏴'
