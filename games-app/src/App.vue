@@ -8,13 +8,15 @@ import TicTacToeComp from "@/components/TicTacToeComp"
 import FlagGuessingComp from "@/components/FlagGuessingComp";
 import Game2048Comp from "@/components/Game2048Comp";
 import RandomFactsComp from "@/components/RandomFactsComp";
+import MinesweeperComp from "@/components/MinesweeperComp";
 
 const routes = {
   '/': HomeComp,
   '/tictactoe': TicTacToeComp,
   '/flagsguessing': FlagGuessingComp,
   '/2048': Game2048Comp,
-  '/randomfacts': RandomFactsComp
+  '/randomfacts': RandomFactsComp,
+  '/minesweeper': MinesweeperComp
 }
 
 export default {
