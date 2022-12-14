@@ -5,7 +5,7 @@
             @contextmenu.prevent="buttonRightClick(index)">{{ field }}
     </button>
   </div>
-  <button id="back-button"><a href="#">back &#127988;</a></button>
+  <button id="back-button"><a href="#">back</a></button>
   <button id="reset-button" @click="resetGame">reset</button>
 </template>
 <script>
@@ -19,6 +19,7 @@ export default {
   },
   methods: {
     resetGame() {
+      this.firstGuess = true
       this.fields = []
       this.solutionFields = []
       for (let i = 0; i < 400; i++) {
