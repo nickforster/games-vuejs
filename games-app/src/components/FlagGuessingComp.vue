@@ -251,7 +251,7 @@ export default {
       this.answersWrong = 0
       this.answersTotal = 0
 
-      this.loadImage()
+      this.loadNext()
     },
     answerClicked(index) {
       if (this.answers[index] === this.correctAnswer) {
@@ -264,16 +264,22 @@ export default {
       if (this.answersTotal === Object.keys(this.countries).length) {
         this.resetGame()
       } else {
-        this.loadImage()
+        this.loadNext()
       }
     },
-    loadImage() {
+    loadNext() {
       this.imageSource = "https://flagcdn.com/" + Object.keys(this.countries)[this.answersTotal] + ".svg"
+      let answerIndexes = []
+      this.correctAnswer = this.countries[Object.keys(this.countries)[this.answersTotal]]
+
       for (let i = 0; i < this.answers.length; i++) {
         let randomIndex = Math.floor(Math.random() * Object.keys(this.countries).length)
-        this.answers[i] = this.countries[Object.keys(this.countries)[randomIndex]]
+        if (!answerIndexes.includes(randomIndex) && answerIndexes !== this.answersTotal) {
+          this.answers[i] = this.countries[Object.keys(this.countries)[randomIndex]]
+          answerIndexes.push(randomIndex)
+        }
       }
-      this.correctAnswer = this.countries[Object.keys(this.countries)[this.answersTotal]]
+
       this.answers[Math.floor(Math.random() * 5)] = this.correctAnswer
     }
   },
