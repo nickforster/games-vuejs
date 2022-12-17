@@ -16,6 +16,11 @@
   </div>
   <button id="back-button"><a href="#">back</a></button>
   <button id="reset-button" @click="resetGame">reset</button>
+  <div id="result-modal" v-if="answersTotal===201">
+    <h2>congratulations</h2>
+    <p>You answered {{ answersCorrect }} of 201 ({{ Math.round(answersCorrect / 201 * 10000) / 100 }}%) Flags
+      correct.</p>
+  </div>
 </template>
 <script>
 function shuffleObject(obj) {
@@ -261,9 +266,7 @@ export default {
       }
       this.answersTotal++
 
-      if (this.answersTotal === Object.keys(this.countries).length) {
-        this.resetGame()
-      } else {
+      if (this.answersTotal !== Object.keys(this.countries).length) {
         this.loadNext()
       }
     },
@@ -371,5 +374,25 @@ a:hover, a:active, a:visited {
 
 button:hover {
   background-color: #2c1550 !important;
+}
+
+#result-modal {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 50000;
+  padding: 0 1.5rem;
+  border-radius: 5px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #090a1a;
+  color: #492386;
+  user-select: none;
+}
+
+h2, #result-modal p {
+  padding: 0;
+  margin: 1rem 0;
 }
 </style>
