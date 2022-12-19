@@ -7,6 +7,9 @@
   </div>
   <button id="back-button"><a href="#">back</a></button>
   <button id="reset-button" @click="resetGame">reset</button>
+  <div id="result-modal" v-if="gameOver !== ''">
+    <h2>{{gameOver}}</h2>
+  </div>
 </template>
 <script>
 export default {
@@ -14,7 +17,8 @@ export default {
     return {
       fields: [],
       solutionFields: [],
-      firstGuess: true
+      firstGuess: true,
+      gameOver: ""
     }
   },
   methods: {
@@ -22,6 +26,7 @@ export default {
       this.firstGuess = true
       this.fields = []
       this.solutionFields = []
+      this.gameOver = ""
       for (let i = 0; i < 400; i++) {
         this.fields.push("")
         this.solutionFields.push(0)
@@ -138,10 +143,16 @@ export default {
         this.firstGuess = false
       } else {
         if (this.solutionFields[id] === -1) {
-          // game over
-          alert("game over")
+          this.gameOver = "Game over"
         } else {
           this.fields[id] = this.solutionFields[id]
+        }
+        this.gameOver = "You won"
+        for (let i = 0; i < this.fields.length; i++) {
+          if (this.fields[i] === '') {
+            this.gameOver = ''
+            break
+          }
         }
       }
     },
