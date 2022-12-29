@@ -10,6 +10,7 @@ import Game2048Comp from "@/components/Game2048Comp";
 import RandomFactsComp from "@/components/RandomFactsComp";
 import MinesweeperComp from "@/components/MinesweeperComp";
 import PegSolitaireComp from "@/components/PegSolitaireComp";
+import MastermindComp from "@/components/MastermindComp";
 
 const routes = {
   '/': HomeComp,
@@ -18,7 +19,8 @@ const routes = {
   '/2048': Game2048Comp,
   '/randomfacts': RandomFactsComp,
   '/minesweeper': MinesweeperComp,
-  '/pegsolitaire': PegSolitaireComp
+  '/pegsolitaire': PegSolitaireComp,
+  '/mastermind': MastermindComp,
 }
 
 export default {
