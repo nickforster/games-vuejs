@@ -12,6 +12,7 @@ import MinesweeperComp from "@/components/MinesweeperComp";
 import PegSolitaireComp from "@/components/PegSolitaireComp";
 import MastermindComp from "@/components/MastermindComp";
 import HangmanComp from "@/components/HangmanComp";
+import PongComp from "@/components/PongComp"
 
 const routes = {
   '/': HomeComp,
@@ -22,7 +23,8 @@ const routes = {
   '/minesweeper': MinesweeperComp,
   '/pegsolitaire': PegSolitaireComp,
   '/mastermind': MastermindComp,
-  '/hangman': HangmanComp
+  '/hangman': HangmanComp,
+  '/pong': PongComp
 }
 
 export default {
