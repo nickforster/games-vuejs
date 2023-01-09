@@ -144,6 +144,7 @@ export default {
       } else {
         if (this.solutionFields[id] === -1) {
           this.gameOver = "Game over"
+          return
         } else {
           this.fields[id] = this.solutionFields[id]
         }
@@ -183,6 +184,24 @@ export default {
   padding: 0;
   user-select: none;
   border: 1px solid #492386;
+}
+
+#result-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #492386;
+  border: 1px solid #492386;
+  border-radius: 5px;
+  background-color: #090a1a;
+  font-size: 2rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+#result-modal h2 {
+  margin: 0;
 }
 
 button:hover {
