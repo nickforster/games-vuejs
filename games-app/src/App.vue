@@ -14,6 +14,7 @@ import MastermindComp from "@/components/MastermindComp";
 import HangmanComp from "@/components/HangmanComp";
 import PongComp from "@/components/PongComp";
 import SnakeComp from "@/components/SnakeComp"
+import PacmanComp from "@/components/PacmanComp";
 
 const routes = {
   '/': HomeComp,
@@ -26,7 +27,8 @@ const routes = {
   '/mastermind': MastermindComp,
   '/hangman': HangmanComp,
   '/pong': PongComp,
-  '/snake': SnakeComp
+  '/snake': SnakeComp,
+  '/pacman': PacmanComp
 }
 
 export default {
