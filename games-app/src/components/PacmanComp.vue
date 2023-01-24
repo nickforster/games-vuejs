@@ -11,14 +11,46 @@ const canvas = {
 }
 
 const squareSize = canvas.size / 20
-const pacman = {
+let pacman = {
   x: 9.5,
   y: 16
 }
+let ghosts = {
+  blue: {
+    x: 8,
+    y: 10
+  },
+  green: {
+    x: 9,
+    y: 10
+  },
+  red: {
+    x: 10,
+    y: 10
+  },
+  yellow: {
+    x: 11,
+    y: 10
+  }
+}
 
-let openMouth = new Image(2, 2)
+const openMouth = new Image(2, 2)
 openMouth.src = require(`@/assets/pacmanOpenMouth.png`)
 
+const walking = new Image(2, 2)
+walking.src = require(`@/assets/pacmanWalking.gif`)
+
+const blueGhost = new Image(2, 2)
+blueGhost.src = require(`@/assets/pacmanBlueGhost.png`)
+
+const redGhost = new Image(2, 2)
+redGhost.src = require(`@/assets/pacmanRedGhost.png`)
+
+const greenGhost = new Image(2, 2)
+greenGhost.src = require(`@/assets/pacmanGreenGhost.png`)
+
+const yellowGhost = new Image(2, 2)
+yellowGhost.src = require(`@/assets/pacmanYellowGhost.png`)
 
 export default {
   data() {
@@ -81,6 +113,11 @@ export default {
         }
       }
       this.context.drawImage(openMouth, pacman.x * squareSize, pacman.y * squareSize);
+
+      this.context.drawImage(blueGhost, ghosts.blue.x * squareSize + 2, ghosts.blue.y * squareSize);
+      this.context.drawImage(greenGhost, ghosts.green.x * squareSize + 2, ghosts.green.y * squareSize);
+      this.context.drawImage(redGhost, ghosts.red.x * squareSize + 2, ghosts.red.y * squareSize);
+      this.context.drawImage(yellowGhost, ghosts.yellow.x * squareSize + 2, ghosts.yellow.y * squareSize);
     }
   },
   mounted() {
